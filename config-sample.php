@@ -14,8 +14,10 @@ class MyConfig extends Config
         /**
          * Acf values are specified in an array of key/values, the key being the name of the field
          */
+        /*
         $this->acf_values = array(
             'text' => $faker->text()
         );
+        */
     }
 }
