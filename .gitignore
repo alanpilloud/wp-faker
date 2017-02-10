@@ -1,3 +1,4 @@
-vendor 
+vendor
 vendor/
-/nbproject/private/
+config-*.php
+!config-sample.php
