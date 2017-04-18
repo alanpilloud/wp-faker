@@ -38,7 +38,7 @@ If you need to run more than one configuration, make a new config file at the ro
 of your WP-Faker installation. It must be named after this pattern :
 
 ```
-config-___name___.php
+config-__name__.php
 ```
 
 Then copy paste the content of config-sample.php and start editing. You will be able
