@@ -38,7 +38,7 @@ If you need to run more than one configuration, make a new config file at the ro
 of your WP-Faker installation. It must be named after this pattern :
 
 ```
-config-***name***.php
+config-___name___.php
 ```
 
 Then copy paste the content of config-sample.php and start editing. You will be able
@@ -46,8 +46,22 @@ to choose which file to use in the footer of the "ready" page.
 
 ### Flex content fields
 
-To use flex content fields, you can't use the system name of the field. You will need
-to use the field_key (you know, this kind of key : field_5641e6b5d1167)
+To use flex content fields, you must specify layout names. Here's an example that will insert two fields in a content :
+
+```
+$this->acf_values = array(
+    'my_flex_content' => array(
+        array(
+            'video_url' => 'https://www.youtube.com/watch?v=8fiPgir_gFY',
+            'acf_fc_layout' => 'video'
+        ),
+        array(
+            'text' => $faker->text(),
+            'acf_fc_layout' => 'title'
+        ),
+    )
+);
+```
 
 ### Cleaning the website of the dummy content
 
