@@ -43,9 +43,13 @@ class Config
     {
         $using = filter_input(INPUT_GET, 'using');
         if (empty($using)) {
-            $using = 'sample';
+            // if no file has been asked, load the first config-* file found
+            $config_files = glob (__DIR__.'/../config-*.php');
+            $using_path = array_pop($config_files);
+        } else {
+            // load the asked config
+            $using_path = __DIR__.'/../config-'.$using.'.php';
         }
-        $using_path = __DIR__.'/../config-'.$using.'.php';
         
         if(file_exists($using_path)) {
             require $using_path;
