@@ -1,3 +1,5 @@
+*.swo
+*.swp
 vendor
 vendor/
 config-*.php
