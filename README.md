@@ -44,6 +44,42 @@ config-__name__.php
 Then copy paste the content of config-sample.php and start editing. You will be able
 to choose which file to use in the footer of the "ready" page.
 
+### Working with images and files
+
+The best way to work with images is to have a few of them already in your media library and assign their IDs in your configuration file :
+
+```
+$images = [241, 240, 239, 157, 156, 153];
+shuffle($images);
+
+$this->acf_values = array(
+    'document_file' => 238
+    'document_gallery' => $images
+);
+
+```
+
+You can still use Faker to get an image, but you will have to handle the upload of files and retrieve the ID of each uploaded file.
+
+### Repeater fields
+
+This exemple will create to rows in a repeater field :
+
+```
+$this->acf_values = array(
+    'my_repeater' => array(
+        array(
+            'title' => $faker->catchPhrase(),
+            'url' => $faker->url(),
+        ),
+        array(
+            'title' => $faker->catchPhrase(),
+            'url' => $faker->url(),
+        ),
+    )
+);
+```
+
 ### Flex content fields
 
 To use flex content fields, you must specify layout names. Here's an example that will insert two fields in a content :
