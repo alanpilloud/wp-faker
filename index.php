@@ -14,7 +14,7 @@ Twig_Autoloader::register();
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
-$faking_content_url = basename($_SERVER['PHP_SELF']);
+$faking_content_url = get_site_url().'/wp-faker/index.php';
 
 if (filter_input(INPUT_GET, 'proceed') == 1) {
     include(ABSPATH.'wp-admin/includes/image.php'); 
