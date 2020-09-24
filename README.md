@@ -1,4 +1,6 @@
-# WP-Faker
+# WP-Faker IS UNMAINTAINED
+
+_Unfortunately, WP-Faker is unmaintenained and may not work anymore._
 
 WP-Faker is a small tool to generate WordPress content really quickly ! More than that, you can add Acf fields too !
 
